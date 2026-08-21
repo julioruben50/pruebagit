@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capacítate - Dashboard</title>
+
+    <link rel="stylesheet" href="Panel.css">
+    <link rel="stylesheet" href="Panel.js"
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>Instituto Forja</h2>
+            <p>Plataforma de Capacitación</p>
+        </div>
+
+        <nav class="menu">
+            <a href="#" class="activo">Dashboard</a>
+            <a href="#">Cursos</a>
+            <a href="#">Participantes</a>
+            <a href="#">Inscripciones</a>
+            <a href="#">Evaluaciones</a>
+            <a href="#">Certificados</a>
+            <a href="#">Reportes</a>
+            <a href="#">Calendario</a>
+        </nav>
+
+    </aside>
+
+
+    <main class="contenido">
+
+        <header class="header">
+
+            <div>
+                <h1>Dashboard</h1>
+                <p>Resumen general de la plataforma</p>
+            </div>
+
+            <div class="usuario">
+                <span>Administrador</span>
+            </div>
+
+        </header>
+
+
+        <section class="tarjetas">
+
+            <div class="tarjeta">
+                <p>Participantes</p>
+                <h2 id="totalParticipantes">0</h2>
+            </div>
+
+            <div class="tarjeta">
+                <p>Cursos activos</p>
+                <h2 id="totalCursos">0</h2>
+            </div>
+
+            <div class="tarjeta">
+                <p>Inscripciones</p>
+                <h2 id="totalInscripciones">0</h2>
+            </div>
+
+            <div class="tarjeta">
+                <p>Cursos completados</p>
+                <h2 id="totalCompletados">0</h2>
+            </div>
+
+        </section>
+
+
+        <section class="seccion-principal">
+
+            <div class="panel">
+
+                <div class="titulo-panel">
+                    <h2>Inscripciones recientes</h2>
+                    <button>Ver todas</button>
+                </div>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Participante</th>
+                            <th>Curso</th>
+                            <th>Fecha</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tablaInscripciones">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <div class="panel">
+
+                <h2>Actividad reciente</h2>
+
+                <div class="actividad">
+                    <strong>Nuevo participante registrado</strong>
+                    <p>Pedro Fernández se unió a la plataforma.</p>
+                </div>
+
+                <div class="actividad">
+                    <strong>Curso publicado</strong>
+                    <p>JavaScript Básico fue publicado.</p>
+                </div>
+
+                <div class="actividad">
+                    <strong>Evaluación completada</strong>
+                    <p>Ana Gómez aprobó HTML Básico.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="seccion-inferior">
+
+            <div class="panel">
+
+                <h2>Cursos más populares</h2>
+
+                <div id="listaCursos"></div>
+
+            </div>
+
+
+            <div class="panel accesos">
+
+                <h2>Accesos rápidos</h2>
+
+                <button>Crear curso</button>
+                <button>Registrar participante</button>
+                <button>Nueva inscripción</button>
+                <button>Generar reporte</button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
