@@ -89,6 +89,9 @@ inscripciones.forEach(function(inscripcion) {
     `;
 });
 
+if (!sessionStorage.getItem('forjaSesion')) {
+  window.location.href = '../Login/login.html';
+}
 
 const listaCursos = document.getElementById("listaCursos");
 
