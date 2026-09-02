@@ -7,7 +7,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="Estilo.css">
-<link rel="stylesheet" href="script.js">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -50,13 +49,13 @@
         <h2>Iniciar sesión</h2>
         <p>Bienvenido de vuelta. Ingresa tus datos para continuar.</p>
 
-        <div class="error-msg" id="errorMsg">Revisa tu correo y contraseña e intenta de nuevo.</div>
+        <div class="error-msg" id="errorMsg">Revisa tu usuario y contraseña e intenta de nuevo.</div>
 
         <form id="loginForm" novalidate>
           <div class="field">
-            <label for="email">Correo electrónico</label>
+            <label for="username">Usuario</label>
             <div class="input-shell">
-              <input type="email" id="email" name="email" placeholder="tunombre@correo.com" required autocomplete="email">
+              <input type="text" id="username" name="username" placeholder="admin" required autocomplete="username">
             </div>
           </div>
 
@@ -85,5 +84,7 @@
       </div>
     </section>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
