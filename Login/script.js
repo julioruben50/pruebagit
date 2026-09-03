@@ -12,7 +12,7 @@
 
 // ---- "Base de datos" de usuarios (cámbiala aquí) ----
 const USUARIOS_VALIDOS = [
-  { usuario: "admin", contraseña: "admin123", rol: "admin" }
+  { usuario: "admin", contraseña: "admin1234", rol: "admin" }
 ];
 
 // Ruta del panel relativa a este archivo (Login/ -> PanelCap/Panel.html)
