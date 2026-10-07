@@ -1,34 +1,48 @@
- /* ==========================================================================
-   AUTENTICACIÓN — Instituto Forja
-   ==========================================================================
-   Esto es un repositorio ESTÁTICO (sin servidor real), así que no existe
-   una base de datos verdadera. Esta validación ocurre en el navegador y
-   sirve para maquetas, prácticas escolares o demos en GitHub Pages.
+ const loginForm = document.getElementById("loginForm");
+const username = document.getElementById("username");
+const password = document.getElementById("password");
+const errorMsg = document.getElementById("errorMsg");
+const toggleBtn = document.getElementById("toggleBtn");
 
-   Si más adelante quieres un backend de verdad (usuarios en base de datos,
-   contraseñas encriptadas, sesiones seguras), eso requiere un servidor
-   (Node/Express, Firebase, Supabase, etc.) — dímelo y te ayudo a montarlo.
-   ========================================================================== */
-
-// ---- "Base de datos" de usuarios (cámbiala aquí) ----
-const USUARIOS_VALIDOS = [
-  { usuario: "admin", contraseña: "admin1234", rol: "admin" }
-];
-
-// Ruta del panel relativa a este archivo (Login/ -> PanelCap/Panel.html)
-const RUTA_PANEL = "../PanelCap/Panel.html";
-
-// ---- Mostrar / ocultar contraseña ----
-const toggleBtn = document.getElementById('toggleBtn');
-const passwordInput = document.getElementById('password');
-
-toggleBtn.addEventListener('click', () => {
-  const isPassword = passwordInput.type === 'password';
-  passwordInput.type = isPassword ? 'text' : 'password';
-  toggleBtn.textContent = isPassword ? 'Ocultar' : 'Ver';
-  toggleBtn.setAttribute('aria-label', isPassword ? 'Ocultar contraseña' : 'Mostrar contraseña');
+// Mostrar / ocultar contraseña
+toggleBtn.addEventListener("click", function () {
+    if (password.type === "password") {
+        password.type = "text";
+        toggleBtn.textContent = "Ocultar";
+    } else {
+        password.type = "password";
+        toggleBtn.textContent = "Ver";
+    }
 });
 
+// Procesar inicio de sesión
+loginForm.addEventListener("submit", function (event) {
+
+    // Evita que el formulario recargue la página
+    event.preventDefault();
+
+    const usuarioIngresado = username.value.trim();
+    const contrasenaIngresada = password.value;
+
+    // Usuario de prueba
+    const usuarioCorrecto = "admin";
+    const contrasenaCorrecta = "1234";
+
+    if (
+        usuarioIngresado === usuarioCorrecto &&
+        contrasenaIngresada === contrasenaCorrecta
+    ) {
+        // Login correcto
+        errorMsg.style.display = "none";
+
+        // Ir al panel
+        window.location.href = "../PanelCap/Panel.html";
+
+    } else {
+        // Login incorrecto
+        errorMsg.style.display = "block";
+    }
+});
 // ---- Envío del formulario ----
 const form = document.getElementById('loginForm');
 const errorMsg = document.getElementById('errorMsg');
